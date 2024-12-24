@@ -1,0 +1,30 @@
+-- Typically, a SQL table will have some value that we will consider
+--  a 'primary key'. Primary keys are 'unique' and 'not null', and contain
+--  these two rules as constraints implicitly. A primary key is generally
+--  used as a unique identifier for a row in a table, making it very fast
+--  to search for in a database (in fact, a database may physically order
+--  data by primary key on its disk), and its unique nature also allows other
+--  parts of the database to reference this record when needed. Here's
+--  an example:
+--      CREATE TABLE site_user (
+--      id SERIAL PRIMARY KEY,
+--      username varchar(100),
+--      password varchar(100)
+--      );
+--  In this case, the SERIAL datatype is used to automatically generate a
+--   numeric primary key when a new record is inserted without one explicitly
+--   defined. Usually, a primary key will be a numeric value. Depending on
+--   the requirements, it may reflect a real-world value, such as a book ISBN
+--   or car VIN number, or it may be a purely abstract value. A primary key
+--   may also be formed out of multiple columns, making it so that the
+--   combination of values from those columns must always be unique. This is
+--   a 'composite key'.
+--  Take a look at the 'Artist' table below:
+--      Artist table
+--      |   id  |      name         |
+--      |-------|-------------------|
+--      |1      |'Peter Gabriel'    |
+--      |2      |'Phil Collins'     |
+--      |3      |'Kate Bush'        |
+--  TODO: Create a table called "Artist" that has the 2 columns listed, where the
+--   'id' column is the table's primary key.
